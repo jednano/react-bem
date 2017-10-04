@@ -1,0 +1,56 @@
+{
+  "name": "@jedmao/react-bem",
+  "version": "0.1.0",
+  "description": "BEM helper functions and HOCs for React.",
+  "keywords": [
+    "react",
+    "bem",
+    "helpers",
+    "css"
+  ],
+  "author": "Jed Mao <jedmao@outlook.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jedmao/react-bem.git"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
+  },
+  "scripts": {
+    "start": "react-scripts-ts start",
+    "build": "react-scripts-ts build",
+    "test": "react-scripts-ts test --env=jsdom",
+    "eject": "react-scripts-ts eject"
+  },
+  "dependencies": {
+    "@types/enzyme": "^2.8.7",
+    "@types/enzyme-to-json": "^1.5.0",
+    "@types/jest": "^20.0.8",
+    "@types/node": "^8.0.28",
+    "@types/prop-types": "^15.5.1",
+    "@types/react": "^16.0.5",
+    "@types/react-dom": "^15.5.4",
+    "@types/react-test-renderer": "^15.5.4",
+    "bem-helpers": "^0.8.1",
+    "bem-join": "^0.1.0"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "devDependencies": {
+    "enzyme": "^2.9.1",
+    "enzyme-to-json": "^2.0.0",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-scripts-ts": "2.7.0",
+    "react-test-renderer": "^15.6.1"
+  }
+}

@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`resolveBEMNode assigns "block__element" to root node's className 1`] = `
+<div
+  className="block__element"
+/>
+`;
+
+exports[`resolveBEMNode assigns block name as class name 1`] = `
+<div
+  className="block"
+/>
+`;
+
+exports[`resolveBEMNode preserves existing className 1`] = `
+<div
+  className="block__element keep-me"
+/>
+`;
+
+exports[`resolveBEMNode removes an empty element value 1`] = `
+<div
+  className="block__element"
+>
+  <div>
+    <div
+      className="block__deeply-nested"
+    />
+  </div>
+</div>
+`;
+
+exports[`resolveBEMNode removes element and modifiers props from root node 1`] = `
+<div
+  className="block__element"
+/>
+`;
+
+exports[`resolveBEMNode resolves a deeply nested element 1`] = `
+<div
+  className="block__element"
+>
+  <div>
+    <div
+      className="block__deeply-nested"
+    />
+  </div>
+</div>
+`;
+
+exports[`resolveBEMNode resolves a deeply nested element with modifiers 1`] = `
+<div
+  className="block__element"
+>
+  <div>
+    <div
+      className="block__deeply-nested block__deeply-nested--mod1 block__deeply-nested--mod2"
+    />
+  </div>
+</div>
+`;
+
+exports[`resolveBEMNode resolves a nested element 1`] = `
+<div
+  className="block__element"
+>
+  <div
+    className="block__nested"
+  />
+</div>
+`;
