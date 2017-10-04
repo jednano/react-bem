@@ -17,6 +17,9 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "jest": {
+    "setupFiles": [
+      "raf/polyfill"
+    ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],
@@ -39,26 +42,27 @@
     "@types/enzyme": "^2.8.7",
     "@types/enzyme-to-json": "^1.5.0",
     "@types/jest": "^20.0.8",
-    "@types/prop-types": "^15.5.1",
-    "@types/react": "^16.0.5",
-    "@types/react-dom": "^15.5.4",
+    "@types/prop-types": "^15.5.2",
+    "@types/react": "^16.0.9",
+    "@types/react-dom": "^16.0.0",
     "@types/react-test-renderer": "^15.5.4",
     "bem-helpers": "^0.9.0",
     "bem-join": "^0.2.0"
   },
   "peerDependencies": {
-    "prop-types": "^15.5.10",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "prop-types": "^15.6.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
   },
   "devDependencies": {
     "enzyme": "^2.9.1",
     "enzyme-to-json": "^2.0.0",
     "jest": "^21.2.1",
-    "prop-types": "^15.5.10",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-test-renderer": "^15.6.1",
+    "prop-types": "^15.6.0",
+    "raf": "^3.4.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-test-renderer": "^16.0.0",
     "ts-jest": "^21.0.1",
     "typescript": "^2.5.3"
   }
