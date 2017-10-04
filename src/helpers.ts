@@ -2,7 +2,7 @@ import {
 	BEMModifiers,
 	joinBEMElement,
 } from 'bem-helpers'
-import bemJoin from 'bem-join'
+import bemJoin, { BEMJoinOptions } from 'bem-join'
 
 import { ReactBEMElementProps } from './types'
 
@@ -49,15 +49,13 @@ function omit<T>(obj: T, paths: string[]) {
 		)
 }
 
+export interface BEMClassNamePropOptions extends BEMClassNamesOptions {}
+
 export function bemClassNameProp(
 	block: string,
 	element?: string,
 	modifiers?: BEMModifiers,
-	options: {
-		className?: string,
-		separator?: string,
-		unique?: boolean,
-	} = {},
+	options: BEMClassNamePropOptions = {},
 ) {
 	const className = bemClassNames(
 		block,
@@ -68,15 +66,13 @@ export function bemClassNameProp(
 	return className ? { className } : {}
 }
 
+export interface BEMClassNamesOptions extends BEMJoinOptions {}
+
 export function bemClassNames(
 	block: string,
 	element?: string,
 	modifiers?: BEMModifiers,
-	options: {
-		className?: string,
-		separator?: string,
-		unique?: boolean,
-	} = {},
+	options: BEMJoinOptions = {},
 ) {
 	return bemJoin(
 		element ? joinBEMElement(block, element) : block,
