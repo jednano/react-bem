@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createBEMElement receives BEM block name via context 1`] = `
+Object {
+  "block": "context-block",
+}
+`;
