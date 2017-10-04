@@ -5,5 +5,5 @@ import {
 
 declare module 'react' {
 	interface HTMLAttributes<T>
-	extends DOMAttributes<T>, BEMBlockProps, BEMElementProps {}
+	extends BEMBlockProps, BEMElementProps {}
 }

@@ -7,7 +7,7 @@ import { ReactBEMElementProps } from './types'
 /**
  * BEM block or element node.
  */
-type ReactBEMElement = React.ReactElement<ReactBEMElementProps>
+export type ReactBEMElement = React.ReactElement<ReactBEMElementProps>
 
 export default function resolveBEMNode(
 	node: ReactBEMElement,

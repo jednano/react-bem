@@ -19,7 +19,7 @@
   "jest": {
     "setupFiles": [
       "raf/polyfill",
-      "<rootDir>/test-setup.ts"
+      "<rootDir>/src/setupTests.ts"
     ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
@@ -37,7 +37,10 @@
     ]
   },
   "scripts": {
-    "test": "jest --env=jsdom"
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "test": "jest --env=jsdom",
+    "watch": "npm run test -- --watch"
   },
   "dependencies": {
     "@types/enzyme": "^2.8.11",

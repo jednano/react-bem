@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { BEMModifiers } from 'bem-helpers'
 
-abstract class AbstractBEMBlock<P = {}, S = {}>
+export abstract class AbstractBEMBlock<P = {}, S = {}>
 extends React.Component<P, S> {
 	static childContextTypes?: {}
 	static displayName?: string
@@ -11,7 +11,7 @@ extends React.Component<P, S> {
 	}
 }
 
-abstract class AbstractBEMElement<P = {}, S = {}>
+export abstract class AbstractBEMElement<P = {}, S = {}>
 extends React.Component<P, S> {
 	static contextTypes?: {}
 	static displayName?: string

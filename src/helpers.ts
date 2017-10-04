@@ -6,7 +6,7 @@ import bemJoin, { BEMJoinOptions } from 'bem-join'
 
 import { ReactBEMElementProps } from './types'
 
-abstract class Component {
+export abstract class Component {
 	static displayName?: string
 }
 
@@ -37,7 +37,7 @@ export function isString(value: any): value is String {
 	return typeof value === 'string'
 }
 
-function omit<T>(obj: T, paths: string[]) {
+export function omit<T>(obj: T, paths: string[]) {
 	return Object.keys(obj || {})
 		.filter(k => paths.indexOf(k) === -1)
 		.reduce(
