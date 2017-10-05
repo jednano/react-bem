@@ -37,7 +37,7 @@ class Foo {
 export default createBEMBlock(Foo)
 ```
 
-The `Baz` component here is an BEM element component and looks like this:
+The `Bar` component here is an BEM element component and looks like this:
 
 ```tsx
 // Bar.tsx
