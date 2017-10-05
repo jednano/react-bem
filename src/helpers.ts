@@ -11,7 +11,7 @@ export abstract class Component {
 }
 
 /**
- * Gets the displayName of a class. Falls back to name or "Component".
+ * Gets the displayName of a class. Falls back to name prop or "Component".
  */
 export function getDisplayName(ComponentClass: typeof Component) {
 	return ComponentClass.displayName
@@ -68,6 +68,10 @@ export function bemClassNameProp(
 
 export interface BEMClassNamesOptions extends BEMJoinOptions {}
 
+/**
+ * Joins a BEM block or element with any number of potentionally deeply
+ * nested modifiers.
+ */
 export function bemClassNames(
 	block: string,
 	element?: string,
