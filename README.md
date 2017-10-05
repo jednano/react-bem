@@ -16,7 +16,7 @@ This library allows you to write BEM block and element components in such a way 
 ```tsx
 // Foo.tsx
 import { createBEMBlock } from '@jedmao/react-bem'
-import Baz from './Baz'
+import Bar from './Bar'
 
 class Foo {
   static defaultProps = {
