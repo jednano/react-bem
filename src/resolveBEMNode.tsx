@@ -9,6 +9,9 @@ import { ReactBEMElementProps } from './types'
  */
 export type ReactBEMElement = React.ReactElement<ReactBEMElementProps>
 
+/**
+ * Walks a BEM node tree, consumes BEM props and resolves class names.
+ */
 export default function resolveBEMNode(
 	node: ReactBEMElement,
 	bem: {
