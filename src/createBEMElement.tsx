@@ -3,7 +3,7 @@ import * as PT from 'prop-types'
 import * as React from 'react'
 
 import { getDisplayName } from './helpers'
-import resolveBEMNode from './resolveBEMNode'
+import resolveBEMNode, { ReactRenderResult } from './resolveBEMNode'
 import { BEMElementClass, BEMElementProps } from './types'
 
 /**
@@ -36,7 +36,7 @@ export default function createBEMElement(
 				block: this.context.block,
 				element: element as string,
 				modifiers,
-			})
+			}) as ReactRenderResult
 		}
 	}
 }

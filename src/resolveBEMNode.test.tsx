@@ -5,17 +5,33 @@ import resolveBEMNode from './resolveBEMNode'
 
 describe('resolveBEMNode', () => {
 
-	it('throws if missing React element argument', () => {
-		expect(() => {
+	it('returns input value if falsey', () => {
+		[
+			null,
+			undefined as any,
+			false as false,
+			0,
+			'',
+		].forEach(value => {
 			// tslint:disable-next-line:no-any
-			resolveBEMNode(undefined as any, undefined as any)
-		}).toThrow('Missing required React element')
+			expect(resolveBEMNode(value, {} as any)).toBe(value)
+		})
 	})
 
-	it('throws if invalid React argument is passed', () => {
+	it('returns input value if string or number', () => {
+		[
+			'foo',
+			42,
+		].forEach(value => {
+			// tslint:disable-next-line:no-any
+			expect(resolveBEMNode(value, {} as any)).toBe(value)
+		})
+	})
+
+	it('throws if invalid React element is passed', () => {
 		expect(() => {
 			// tslint:disable-next-line:no-any
-			resolveBEMNode('foo' as any, undefined as any)
+			resolveBEMNode({} as any, undefined as any)
 		}).toThrow('Invalid React element')
 	})
 
@@ -53,7 +69,7 @@ describe('resolveBEMNode', () => {
 			{
 				block: 'block',
 			},
-		))).toMatchSnapshot()
+		) as JSX.Element)).toMatchSnapshot()
 	})
 
 	it('assigns "block__element" to root node\'s className', () => {
@@ -63,7 +79,7 @@ describe('resolveBEMNode', () => {
 				block: 'block',
 				element: 'element',
 			},
-		))).toMatchSnapshot()
+		) as JSX.Element)).toMatchSnapshot()
 	})
 
 	it('preserves existing className', () => {
@@ -73,7 +89,7 @@ describe('resolveBEMNode', () => {
 				block: 'block',
 				element: 'element',
 			},
-		))).toMatchSnapshot()
+		) as JSX.Element)).toMatchSnapshot()
 	})
 
 	it('removes element and modifiers props from root node', () => {
@@ -83,7 +99,7 @@ describe('resolveBEMNode', () => {
 				block: 'block',
 				element: 'element',
 			},
-		))).toMatchSnapshot()
+		) as JSX.Element)).toMatchSnapshot()
 	})
 
 	it('resolves a nested element', () => {
@@ -95,7 +111,7 @@ describe('resolveBEMNode', () => {
 				block: 'block',
 				element: 'element',
 			},
-		))).toMatchSnapshot()
+		) as JSX.Element)).toMatchSnapshot()
 	})
 
 	it('resolves a deeply nested element', () => {
@@ -109,7 +125,7 @@ describe('resolveBEMNode', () => {
 				block: 'block',
 				element: 'element',
 			},
-		))).toMatchSnapshot()
+		) as JSX.Element)).toMatchSnapshot()
 	})
 
 	it('removes an empty element value', () => {
@@ -123,7 +139,7 @@ describe('resolveBEMNode', () => {
 				block: 'block',
 				element: 'element',
 			},
-		))).toMatchSnapshot()
+		) as JSX.Element)).toMatchSnapshot()
 	})
 
 	it('resolves a deeply nested element with modifiers', () => {
@@ -137,6 +153,20 @@ describe('resolveBEMNode', () => {
 				block: 'block',
 				element: 'element',
 			},
-		))).toMatchSnapshot()
+		) as JSX.Element)).toMatchSnapshot()
 	})
+
+	it('doesn\'t choke on nested primitive values', () => {
+		[
+			false as false,
+			null,
+			'foo',
+			42,
+		].forEach(value => {
+			expect(shallow(resolveBEMNode(
+				<div>{value}</div>,
+				{ block: 'block' },
+			) as JSX.Element)).toMatchSnapshot()
+		})
+    })
 })

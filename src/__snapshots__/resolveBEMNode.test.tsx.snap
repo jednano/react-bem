@@ -12,6 +12,34 @@ exports[`resolveBEMNode assigns block name as class name 1`] = `
 />
 `;
 
+exports[`resolveBEMNode doesn't choke on nested primitive values 1`] = `
+<div
+  className="block"
+/>
+`;
+
+exports[`resolveBEMNode doesn't choke on nested primitive values 2`] = `
+<div
+  className="block"
+/>
+`;
+
+exports[`resolveBEMNode doesn't choke on nested primitive values 3`] = `
+<div
+  className="block"
+>
+  foo
+</div>
+`;
+
+exports[`resolveBEMNode doesn't choke on nested primitive values 4`] = `
+<div
+  className="block"
+>
+  42
+</div>
+`;
+
 exports[`resolveBEMNode preserves existing className 1`] = `
 <div
   className="block__element keep-me"

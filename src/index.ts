@@ -2,7 +2,12 @@ import './augmentReact'
 
 export { default as createBEMBlock } from './createBEMBlock'
 export { default as createBEMElement } from './createBEMElement'
-export { default as resolveBEMNode } from './resolveBEMNode'
+export {
+	default as resolveBEMNode,
+	BEMNode,
+	ReactBEMElement,
+	ReactRenderResult,
+} from './resolveBEMNode'
 
 export {
 	bemClassNameProp,
@@ -11,6 +16,7 @@ export {
 	BEMClassNamesOptions,
 	getDisplayName,
 	isFunction,
+	isNumber,
 	isString,
 	omit,
 	omitBEMProps,

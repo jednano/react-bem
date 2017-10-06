@@ -33,6 +33,11 @@ export function isFunction(value: any): value is Function {
 }
 
 // tslint:disable-next-line:no-any
+export function isNumber(value: any): value is Number {
+	return typeof value === 'number'
+}
+
+// tslint:disable-next-line:no-any
 export function isString(value: any): value is String {
 	return typeof value === 'string'
 }

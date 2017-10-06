@@ -3,7 +3,7 @@ import * as React from 'react'
 
 import { getDisplayName, isFunction } from './helpers'
 import { BEMBlockClass, BEMBlockProps } from './types'
-import resolveBEMNode from './resolveBEMNode'
+import resolveBEMNode, { ReactRenderResult } from './resolveBEMNode'
 
 /**
  * Wraps a class with BEM block functionality, providing the BEM block name
@@ -43,7 +43,7 @@ export default function createBEMBlock(
 			return rendered && resolveBEMNode(rendered, {
 				block: block as string,
 				modifiers,
-			})
+			}) as ReactRenderResult
 		}
 	}
 }
