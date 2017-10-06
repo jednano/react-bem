@@ -35,7 +35,7 @@ export default function createBEMElement(
 			return rendered && resolveBEMNode(rendered, {
 				block: this.context.block,
 				element: element as string,
-				modifiers,
+				modifiers: [rendered.props.modifiers].concat([modifiers]),
 			}) as ReactRenderResult
 		}
 	}

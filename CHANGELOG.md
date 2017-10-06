@@ -1,3 +1,6 @@
+## 0.2.2
+- Defer responsibility of merging modifiers to the HOCs.
+
 ## 0.2.1
 - Merge root node's modifiers w/ modifiers prop (fixes [`#11`](https://github.com/jedmao/react-bem/issues/11)).
 

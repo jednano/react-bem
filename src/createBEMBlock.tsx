@@ -42,7 +42,7 @@ export default function createBEMBlock(
 			const rendered = super.render.call(this)
 			return rendered && resolveBEMNode(rendered, {
 				block: block as string,
-				modifiers,
+				modifiers: [rendered.props.modifiers].concat([modifiers]),
 			}) as ReactRenderResult
 		}
 	}

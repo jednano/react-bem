@@ -62,11 +62,7 @@ export default function resolveBEMNode(
 	const classNameProp = (element || !depth) ? bemClassNameProp(
 		block,
 		element,
-		depth
-			? modifiers
-			: [modifiers].concat(
-				[(node as ReactBEMElement).props.modifiers]
-			) as BEMModifiers,
+		modifiers,
 		{ className: props.className },
 	) : {}
 	return (

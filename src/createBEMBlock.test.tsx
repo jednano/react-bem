@@ -94,4 +94,18 @@ describe('createBEMBlock', () => {
 			</FooBlock>,
 		)
 	})
+
+	it('merges modifiers prop with root node\'s modifiers', () => {
+		class Foo extends React.Component {
+			render() {
+				return (
+					<div modifiers="mod1" />
+				)
+			}
+		}
+		const FooBlock = createBEMBlock(Foo)
+		expect(render(
+			<FooBlock block="foo" modifiers="mod2" />,
+		)).toMatchSnapshot()
+	})
 })

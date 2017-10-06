@@ -49,4 +49,23 @@ describe('createBEMElement', () => {
 			},
 		)
 	})
+
+	it('merges modifiers prop with root node\'s modifiers', () => {
+		class Bar extends React.Component {
+			render() {
+				return (
+					<div modifiers="mod1" />
+				)
+			}
+		}
+		const BarElement = createBEMElement(Bar)
+		expect(shallow(
+			<BarElement element="bar" modifiers="mod2" />,
+			{
+				context: {
+					block: 'foo',
+				},
+			},
+		)).toMatchSnapshot()
+	})
 })

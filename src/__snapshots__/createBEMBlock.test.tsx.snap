@@ -7,6 +7,12 @@ Object {
 }
 `;
 
+exports[`createBEMBlock merges modifiers prop with root node's modifiers 1`] = `
+<div
+  class="foo foo--mod1 foo--mod2"
+/>
+`;
+
 exports[`createBEMBlock provides BEM block name via context 1`] = `
 Object {
   "block": "context-block",
