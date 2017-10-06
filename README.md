@@ -1,7 +1,7 @@
 # react-bem
 
-[![NPM version](http://img.shields.io/npm/v/@jedmao/react-bem.svg?style=flat)](https://www.npmjs.org/package/@jedmao/react-bem)
-[![npm license](http://img.shields.io/npm/l/@jedmao/react-bem.svg?style=flat-square)](https://www.npmjs.org/package/@jedmao/react-bem)
+[![NPM version](http://img.shields.io/npm/v/@jedmao/react-bem.svg?style=flat)](https://www.npmjs.com/package/@jedmao/react-bem)
+[![npm license](http://img.shields.io/npm/l/@jedmao/react-bem.svg?style=flat-square)](https://www.npmjs.com/package/@jedmao/react-bem)
 [![Travis Build Status](https://img.shields.io/travis/jedmao/react-bem.svg)](https://travis-ci.org/jedmao/react-bem)
 [![Dependency Status](https://gemnasium.com/badges/github.com/jedmao/react-bem.svg)](https://gemnasium.com/github.com/jedmao/react-bem)
 
