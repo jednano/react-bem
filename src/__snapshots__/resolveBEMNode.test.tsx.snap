@@ -40,9 +40,19 @@ exports[`resolveBEMNode doesn't choke on nested primitive values 4`] = `
 </div>
 `;
 
+exports[`resolveBEMNode merges modifiers prop with modifiers option 1`] = `
+<div
+  className="foo foo--mod1 foo--mod2"
+>
+  <div
+    className="foo__bar foo__bar--mod3"
+  />
+</div>
+`;
+
 exports[`resolveBEMNode preserves existing className 1`] = `
 <div
-  className="block__element keep-me"
+  className="block__element block__element--mod1 keep-me"
 />
 `;
 
@@ -60,7 +70,7 @@ exports[`resolveBEMNode removes an empty element value 1`] = `
 
 exports[`resolveBEMNode removes element and modifiers props from root node 1`] = `
 <div
-  className="block__element"
+  className="block__element block__element--and-me"
 />
 `;
 

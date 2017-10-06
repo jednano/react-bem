@@ -1,3 +1,6 @@
+## 0.2.1
+- Merge root node's modifiers w/ modifiers prop (fixes [`#11`](https://github.com/jedmao/react-bem/issues/11)).
+
 ## 0.2.0
 - Export `isNumber` helper.
 - Export `BEMNode` interface.

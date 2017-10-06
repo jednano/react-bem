@@ -84,7 +84,7 @@ describe('resolveBEMNode', () => {
 
 	it('preserves existing className', () => {
 		expect(shallow(resolveBEMNode(
-			<div element="remove-me" modifiers="and-me" className="keep-me" />,
+			<div element="remove-me" modifiers="mod1" className="keep-me" />,
 			{
 				block: 'block',
 				element: 'element',
@@ -153,6 +153,18 @@ describe('resolveBEMNode', () => {
 				block: 'block',
 				element: 'element',
 			},
+		) as JSX.Element)).toMatchSnapshot()
+	})
+
+	it('merges modifiers prop with modifiers option', () => {
+		expect(shallow(resolveBEMNode(
+			<div modifiers="mod2">
+				<div element="bar" modifiers="mod3" />
+			</div>,
+			{
+				block: 'foo',
+				modifiers: 'mod1'
+			}
 		) as JSX.Element)).toMatchSnapshot()
 	})
 
