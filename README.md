@@ -147,4 +147,7 @@ This project is written in TypeScript, so the TypeScript definitions come for fr
 - `BEMClassNamesOptions`
 - `BEMElementClass`
 - `BEMElementProps`
+- `BEMNode`
+- `ReactBEMElement`
 - `ReactBEMElementProps`
+- `ReactRenderResult`

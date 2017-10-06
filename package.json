@@ -1,6 +1,6 @@
 {
   "name": "@jedmao/react-bem",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "BEM helper functions and HOCs for React.",
   "keywords": [
     "react",
@@ -39,6 +39,7 @@
   "scripts": {
     "build": "tsc",
     "build:watch": "tsc --watch",
+    "pretest": "npm run build",
     "test": "jest --env=jsdom",
     "watch": "npm run test -- --watch"
   },
