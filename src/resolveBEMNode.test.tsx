@@ -155,4 +155,18 @@ describe('resolveBEMNode', () => {
 			},
 		) as JSX.Element)).toMatchSnapshot()
 	})
+
+	it('doesn\'t choke on nested primitive values', () => {
+		[
+			false as false,
+			null,
+			'foo',
+			42,
+		].forEach(value => {
+			expect(shallow(resolveBEMNode(
+				<div>{value}</div>,
+				{ block: 'block' },
+			) as JSX.Element)).toMatchSnapshot()
+		})
+    })
 })

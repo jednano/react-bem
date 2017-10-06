@@ -79,7 +79,7 @@ export default function resolveBEMNode(
 		const count = React.Children.count(children)
 		return !count ? children : (count > 1)
 			? React.Children.map(children, resolveChild)
-			: resolveChild(React.Children.only(children), 0, true)
+			: resolveChild(children as React.ReactChild, 0, true)
 
 		function resolveChild(
 			child: React.ReactChild,
