@@ -72,6 +72,16 @@ describe('resolveBEMNode', () => {
 		) as JSX.Element)).toMatchSnapshot()
 	})
 
+	it('preserves the ref attribute', () => {
+		const fn = jest.fn()
+		expect((resolveBEMNode(
+			<div ref={fn} />,
+			{
+				block: 'block',
+			}
+		) as any).ref).toBe(fn)
+	})
+
 	it('assigns "block__element" to root node\'s className', () => {
 		expect(shallow(resolveBEMNode(
 			<div />,

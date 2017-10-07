@@ -50,6 +50,9 @@ export interface BEMElementProps {
 }
 
 export interface ReactBEMElementProps<P = {}>
-extends BEMElementProps, React.Props<P> {
+extends BEMElementProps, ReactElementProps<P> {}
+
+export interface ReactElementProps<P = {}>
+extends React.Props<P> {
 	className?: string,
 }

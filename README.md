@@ -150,4 +150,5 @@ This project is written in TypeScript, so the TypeScript definitions come for fr
 - `BEMNode`
 - `ReactBEMElement`
 - `ReactBEMElementProps`
+- `ReactElementProps`
 - `ReactRenderResult`

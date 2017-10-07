@@ -1,3 +1,9 @@
+## 0.2.4
+- **Fix:** Preserve `ref` attribute (fixes [`#8`](https://github.com/jedmao/react-bem/issues/8)).
+
+## 0.2.3
+- Badge fixes on README.
+
 ## 0.2.2
 - Defer responsibility of merging modifiers to the HOCs.
 
