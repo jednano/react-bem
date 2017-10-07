@@ -1,3 +1,6 @@
+## 0.2.5
+- **Fix:** Preserve `key` attribute (fixes [`#2`](https://github.com/jedmao/react-bem/issues/2)).
+
 ## 0.2.4
 - **Fix:** Preserve `ref` attribute (fixes [`#8`](https://github.com/jedmao/react-bem/issues/8)).
 

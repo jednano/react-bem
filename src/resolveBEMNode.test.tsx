@@ -72,6 +72,16 @@ describe('resolveBEMNode', () => {
 		) as JSX.Element)).toMatchSnapshot()
 	})
 
+	it('preserves the key attribute', () => {
+		const key = 'keep-me'
+		expect((resolveBEMNode(
+			<div key={key} />,
+			{
+				block: 'block',
+			}
+		) as any).key).toBe(key)
+	})
+
 	it('preserves the ref attribute', () => {
 		const fn = jest.fn()
 		expect((resolveBEMNode(
