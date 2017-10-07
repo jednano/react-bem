@@ -3,6 +3,7 @@ import * as PT from 'prop-types'
 import * as React from 'react'
 
 import createBEMBlock from './createBEMBlock'
+import createBEMElement from "./createBEMElement";
 
 describe('createBEMBlock', () => {
 
@@ -107,5 +108,42 @@ describe('createBEMBlock', () => {
 		expect(render(
 			<FooBlock block="foo" modifiers="mod2" />,
 		)).toMatchSnapshot()
+	})
+
+	it('Renders README example with correct className as shown', () => {
+		class Bar extends React.Component {
+			static defaultProps = {
+				element: 'bar'
+			}
+			render() {
+				return (
+					<div>
+						<div element="corge" className="save-me">
+							garpley
+						</div>
+					</div>
+				)
+			}
+		}
+
+		const BarElement = createBEMElement(Bar);
+
+		class Foo extends React.Component {
+			static defaultProps = {
+				block: 'foo'
+			}
+			render() {
+				return (
+					<div modifiers="mod1 mod2">
+						<BarElement />
+						<div element="baz" modifiers={['mod3', { mod4: true }]}>
+							qux
+						</div>
+					</div>
+				)
+			}
+		}
+		const FooBlock = createBEMBlock(Foo);
+		expect(render(<FooBlock/>)).toMatchSnapshot()
 	})
 })
