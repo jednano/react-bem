@@ -65,10 +65,11 @@ export default function resolveBEMNode(
 		modifiers,
 		{ className: props.className },
 	) : {}
-	const { ref } = node as { ref?: () => void }
+	const { key, ref } = node as { key?: string, ref?: () => void }
 	return (
 		<node.type
 			{...{
+				...(key ? { key } : {}),
 				...(ref ? { ref } : {}),
 				...props,
 				children: resolveChildren(props.children),
