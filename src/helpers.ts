@@ -4,7 +4,11 @@ import {
 } from 'bem-helpers'
 import bemJoin, { BEMJoinOptions } from 'bem-join'
 
-import { ReactBEMElementProps } from './types'
+import {
+	BEMBlockProps,
+	BEMElementProps,
+	ReactElementProps,
+} from './types'
 
 export abstract class Component {
 	static displayName?: string
@@ -19,11 +23,11 @@ export function getDisplayName(ComponentClass: typeof Component) {
 		|| 'Component'
 }
 
-const bemProps = ['block', 'element', 'modifiers']
+const bemProps: ['block', 'element', 'modifiers'] =
+	['block', 'element', 'modifiers']
 export function omitBEMProps<T>(
-	props: T & ReactBEMElementProps,
-): ReactBEMElementProps {
-	// tslint:disable-next-line:no-any
+	props: T & BEMBlockProps & BEMElementProps,
+): ReactElementProps {
 	return omit(props, bemProps) as any
 }
 
@@ -42,9 +46,9 @@ export function isString(value: any): value is String {
 	return typeof value === 'string'
 }
 
-export function omit<T>(obj: T, paths: string[]) {
+export function omit<T, K extends keyof T>(obj: T, paths: K[]) {
 	return Object.keys(obj || {})
-		.filter(k => paths.indexOf(k) === -1)
+		.filter((k: K) => paths.indexOf(k) === -1)
 		.reduce(
 			(accumulator, key) => {
 				accumulator[key] = obj[key]
