@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`react-bem HOCs renders an element within a block within a block 1`] = `
+<div
+  class="b1"
+>
+  <div
+    class="b1__e1"
+  />
+  <div
+    class="b2"
+  >
+    <div
+      class="b2__e2"
+    />
+  </div>
+</div>
+`;

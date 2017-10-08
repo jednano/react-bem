@@ -1,3 +1,6 @@
+## 0.2.6
+- **Fix:** Ensure `resolveBEMNode` can render nested block components (fixes [`#7`](https://github.com/jedmao/react-bem/issues/7)).
+
 ## 0.2.5
 - **Fix:** Preserve `key` attribute (fixes [`#2`](https://github.com/jedmao/react-bem/issues/2)).
 

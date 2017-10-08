@@ -45,6 +45,9 @@ export default function resolveBEMNode(
 	if (!React.isValidElement(node)) {
 		throw new Error('Invalid React element')
 	}
+	if (!isString(node.type)) {
+		return node
+	}
 	if (!bem) {
 		throw new Error('Missing required BEM object argument')
 	}
