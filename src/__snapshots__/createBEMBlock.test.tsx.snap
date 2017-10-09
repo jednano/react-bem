@@ -1,9 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`createBEMBlock extends getChildContext() with the block value from props 1`] = `
+exports[`createBEMBlock extends input propTypes with a block validator 1`] = `
 Object {
-  "bar": "baz",
-  "block": "context-block",
+  "bar": [Function],
+  "block": [Function],
+  "modifiers": [Function],
 }
 `;
 
@@ -15,6 +16,6 @@ exports[`createBEMBlock merges modifiers prop with root node's modifiers 1`] = `
 
 exports[`createBEMBlock provides BEM block name via context 1`] = `
 Object {
-  "block": "context-block",
+  "block": "foo",
 }
 `;

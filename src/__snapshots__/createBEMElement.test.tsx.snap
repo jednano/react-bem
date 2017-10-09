@@ -1,13 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`createBEMElement extends input propTypes with a block validator 1`] = `
+Object {
+  "bar": [Function],
+  "block": [Function],
+  "element": [Function],
+  "modifiers": [Function],
+}
+`;
+
 exports[`createBEMElement merges modifiers prop with root node's modifiers 1`] = `
 <div
   className="foo__bar foo__bar--mod1 foo__bar--mod2"
 />
-`;
-
-exports[`createBEMElement receives BEM block name via context 1`] = `
-Object {
-  "block": "context-block",
-}
 `;

@@ -16,9 +16,9 @@ describe('createBEMElement', () => {
 		expect(BarElement.displayName).toEqual('BEMElement(Bar)')
 	})
 
-	it('extends input contextTypes with a block validator', () => {
+	it('extends input propTypes with a block validator', () => {
 		class Bar extends React.Component {
-			static contextTypes = {
+			static propTypes = {
 				bar: PT.string,
 			}
 			render() {
@@ -26,27 +26,19 @@ describe('createBEMElement', () => {
 			}
 		}
 		const BarElement = createBEMElement(Bar)
-		expect(BarElement.contextTypes).toEqual({
-			bar: PT.string,
-			block: PT.string.isRequired,
-		})
+		expect(BarElement.propTypes).toMatchSnapshot()
 	})
 
-	it('receives BEM block name via context', () => {
+	it('receives BEM block name via props', () => {
 		class Bar extends React.Component {
 			render() {
-				expect(this.context).toMatchSnapshot()
+				expect((this.props as any).block).toBe('foo')
 				return null
 			}
 		}
 		const BarElement = createBEMElement(Bar)
 		shallow(
-			<BarElement element="bar" />,
-			{
-				context: {
-					block: 'context-block',
-				},
-			},
+			<BarElement block="foo" element="bar" />,
 		)
 	})
 
@@ -60,12 +52,7 @@ describe('createBEMElement', () => {
 		}
 		const BarElement = createBEMElement(Bar)
 		expect(shallow(
-			<BarElement element="bar" modifiers="mod2" />,
-			{
-				context: {
-					block: 'foo',
-				},
-			},
+			<BarElement block="foo" element="bar" modifiers="mod2" />,
 		)).toMatchSnapshot()
 	})
 })

@@ -1,9 +1,5 @@
-import {
-	BEMBlockProps,
-	BEMElementProps,
-} from './types'
+import { BEMElementProps } from './types'
 
 declare module 'react' {
-	interface HTMLAttributes<T>
-	extends BEMBlockProps, BEMElementProps {}
+	interface HTMLAttributes<T> extends BEMElementProps {}
 }

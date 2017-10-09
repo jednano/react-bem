@@ -8,7 +8,7 @@ import { BEMElementClass, BEMElementProps } from './types'
 
 /**
  * Wraps a class with BEM element functionality, receiving the BEM block name
- * via context and converting element and modifiers attributes into className
+ * via props and converting element and modifiers attributes into className
  * attributes.
  * @param ComponentClass The class to wrap with BEM element functionality.
  */
@@ -21,19 +21,22 @@ export default function createBEMElement(
 
 		static displayName = `BEMElement(${getDisplayName(ComponentClass)})`
 
-		static contextTypes = {
-			...ComponentClass.contextTypes,
+		static propTypes = {
+			...ComponentClass.propTypes,
 			block: PT.string.isRequired,
+			element: PT.string,
+			modifiers: PT.any,
 		}
 
 		render() {
 			const {
+				block,
 				element,
 				modifiers,
 			} = this.props
 			const rendered = super.render.call(this)
 			return rendered && resolveBEMNode(rendered, {
-				block: this.context.block,
+				block: block as string,
 				element: element as string,
 				modifiers: [rendered.props.modifiers].concat([modifiers]),
 			}) as ReactRenderResult

@@ -1,13 +1,13 @@
 import * as PT from 'prop-types'
 import * as React from 'react'
 
-import { getDisplayName, isFunction } from './helpers'
+import { getDisplayName } from './helpers'
 import { BEMBlockClass, BEMBlockProps } from './types'
 import resolveBEMNode, { ReactRenderResult } from './resolveBEMNode'
 
 /**
  * Wraps a class with BEM block functionality, providing the BEM block name
- * via context and converting block and modifiers attributes into className
+ * via props and converting block and modifiers attributes into className
  * attributes.
  * @param ComponentClass The class to wrap with BEM block functionality.
  */
@@ -20,18 +20,10 @@ export default function createBEMBlock(
 
 		static displayName = `BEMBlock(${getDisplayName(ComponentClass)})`
 
-		static childContextTypes = {
-			...ComponentClass.childContextTypes,
-			block: PT.string.isRequired,
-		}
-
-		getChildContext() {
-			return {
-				...(isFunction(super.getChildContext) && (
-					super.getChildContext.call(this))
-				),
-				block: this.props.block,
-			}
+		static propTypes = {
+			...(ComponentClass.propTypes),
+			block: PT.string,
+			modifiers: PT.any,
 		}
 
 		render() {

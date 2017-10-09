@@ -45,9 +45,6 @@ export default function resolveBEMNode(
 	if (!React.isValidElement(node)) {
 		throw new Error('Invalid React element')
 	}
-	if (!isString(node.type)) {
-		return node
-	}
 	if (!bem) {
 		throw new Error('Missing required BEM object argument')
 	}
@@ -61,14 +58,25 @@ export default function resolveBEMNode(
 	if (element && !isString(element)) {
 		throw new Error('BEM element name must be a string')
 	}
-	const props = omitBEMProps(node.props)
+	const props = omitBEMProps((node as ReactBEMElement).props)
+	const { key, ref } = node as { key?: string, ref?: () => void }
+	if (!isString(node.type)) {
+		return React.cloneElement(
+			node as any,
+			{
+				...(key ? { key } : {}),
+				...(ref ? { ref } : {}),
+				...props,
+				block,
+			},
+		)
+	}
 	const classNameProp = (element || !depth) ? bemClassNameProp(
 		block,
 		element,
 		modifiers,
 		{ className: props.className },
 	) : {}
-	const { key, ref } = node as { key?: string, ref?: () => void }
 	return React.createElement(
 		node.type,
 		{
