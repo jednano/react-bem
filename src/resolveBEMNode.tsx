@@ -69,16 +69,15 @@ export default function resolveBEMNode(
 		{ className: props.className },
 	) : {}
 	const { key, ref } = node as { key?: string, ref?: () => void }
-	return (
-		<node.type
-			{...{
-				...(key ? { key } : {}),
-				...(ref ? { ref } : {}),
-				...props,
-				children: resolveChildren(props.children),
-				...classNameProp,
-			}}
-		/>
+	return React.createElement(
+		node.type,
+		{
+			...(key ? { key } : {}),
+			...(ref ? { ref } : {}),
+			...props,
+			...classNameProp,
+		} as ReactBEMElementProps,
+		resolveChildren(props.children),
 	)
 
 	function resolveChildren(children: React.ReactNode) {
