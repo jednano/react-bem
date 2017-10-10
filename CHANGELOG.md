@@ -1,3 +1,6 @@
+## 0.2.7
+- **Fix:** `@types/react-test-renderer` bug (fixes [`#21`](https://github.com/jedmao/react-bem/issues/21)).
+
 ## 0.2.6
 - **Fix:** Ensure `resolveBEMNode` can render nested block components (fixes [`#7`](https://github.com/jedmao/react-bem/issues/7)).
 
