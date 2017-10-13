@@ -95,6 +95,10 @@ Rendering the `Foo` block above would produce the following HTML:
 
 Wraps a class with BEM block functionality, providing the BEM block name via context and converting block and modifiers attributes into `className` attributes.
 
+### `createBEMBlockSFC( SFC )`
+
+Wraps an SFC with BEM block functionality, providing the BEM block name via context and converting block and modifiers attributes into `className` attributes.
+
 ### `createBEMElement( ComponentClass )`
 
 Wraps a class with BEM element functionality, receiving the BEM block name via context and converting element and modifiers attributes into `className` attributes.
