@@ -6,10 +6,10 @@ import createBEMElementSFC from './createBEMElementSFC'
 
 describe('createBEMElementSFC', () => {
 
-	it('extends input class with a displayName of "BEMElement(Bar)"', () => {
+	it('extends input class with a displayName of "BEMElementSFC(Bar)"', () => {
 		const Bar: React.SFC = () => null
 		const BarElement = createBEMElementSFC(Bar)
-		expect(BarElement.displayName).toEqual('BEMElement(Bar)')
+		expect(BarElement.displayName).toEqual('BEMElementSFC(Bar)')
 	})
 
 	it('extends input contextTypes with a block validator', () => {
