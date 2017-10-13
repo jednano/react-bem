@@ -2,30 +2,22 @@ import { shallow } from 'enzyme'
 import * as PT from 'prop-types'
 import * as React from 'react'
 
-import createBEMElement from './createBEMElement'
+import createBEMElementSFC from './createBEMElementSFC'
 
-describe('createBEMElement', () => {
+describe('createBEMElementSFC', () => {
 
 	it('extends input class with a displayName of "BEMElement(Bar)"', () => {
-		class Bar extends React.Component {
-			render() {
-				return null
-			}
-		}
-		const BarElement = createBEMElement(Bar)
+		const Bar: React.SFC = () => null
+		const BarElement = createBEMElementSFC(Bar)
 		expect(BarElement.displayName).toEqual('BEMElement(Bar)')
 	})
 
 	it('extends input contextTypes with a block validator', () => {
-		class Bar extends React.Component {
-			static contextTypes = {
-				bar: PT.string,
-			}
-			render() {
-				return null
-			}
+		const Bar: React.SFC = () => null
+		Bar.contextTypes = {
+			bar: PT.string,
 		}
-		const BarElement = createBEMElement(Bar)
+		const BarElement = createBEMElementSFC(Bar)
 		expect(BarElement.contextTypes).toEqual({
 			bar: PT.string,
 			block: PT.string.isRequired,
@@ -33,15 +25,11 @@ describe('createBEMElement', () => {
 	})
 
 	it('extends input propTypes with a element and modifiers validators', () => {
-		class Bar extends React.Component {
-			static propTypes = {
-				baz: PT.string,
-			}
-			render() {
-				return null
-			}
+		const Bar: React.SFC = () => null
+		Bar.propTypes = {
+			baz: PT.string,
 		}
-		const BarElement = createBEMElement(Bar)
+		const BarElement = createBEMElementSFC(Bar)
 		expect(BarElement.propTypes).toEqual({
 			baz: PT.string,
 			element: PT.string,
@@ -50,13 +38,11 @@ describe('createBEMElement', () => {
 	})
 
 	it('receives BEM block name via context', () => {
-		class Bar extends React.Component {
-			render() {
-				expect(this.context).toMatchSnapshot()
-				return null
-			}
+		const Bar: React.SFC = (prop, context) => {
+			expect(context).toMatchSnapshot()
+			return null
 		}
-		const BarElement = createBEMElement(Bar)
+		const BarElement = createBEMElementSFC(Bar)
 		shallow(
 			<BarElement element="bar" />,
 			{
@@ -68,14 +54,10 @@ describe('createBEMElement', () => {
 	})
 
 	it('merges modifiers prop with root node\'s modifiers', () => {
-		class Bar extends React.Component {
-			render() {
-				return (
-					<div modifiers="mod1" />
-				)
-			}
-		}
-		const BarElement = createBEMElement(Bar)
+		const Bar: React.SFC = () => (
+			<div modifiers="mod1" />
+		)
+		const BarElement = createBEMElementSFC(Bar)
 		expect(shallow(
 			<BarElement element="bar" modifiers="mod2" />,
 			{

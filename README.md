@@ -91,13 +91,17 @@ Rendering the `Foo` block above would produce the following HTML:
 
 ## API
 
-### `createBEMBlock( componentClass )`
+### `createBEMBlock( ComponentClass )`
 
 Wraps a class with BEM block functionality, providing the BEM block name via context and converting block and modifiers attributes into `className` attributes.
 
-### `createBEMElement( componentClass )`
+### `createBEMElement( ComponentClass )`
 
 Wraps a class with BEM element functionality, receiving the BEM block name via context and converting element and modifiers attributes into `className` attributes.
+
+### `createBEMElementSFC( SFC )`
+
+Wraps a Stateless Function Component (SFC) with BEM element functionality, receiving the BEM block name via context and converting element and modifiers attributes into `className` attributes.
 
 ### `resolveBEMNode( node, { block, element?, modifiers? } )`
 

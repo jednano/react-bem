@@ -2,6 +2,7 @@ import './augmentReact'
 
 export { default as createBEMBlock } from './createBEMBlock'
 export { default as createBEMElement } from './createBEMElement'
+export { default as createBEMElementSFC } from './createBEMElementSFC'
 export {
 	default as resolveBEMNode,
 	BEMNode,

@@ -5,6 +5,13 @@ import { getDisplayName, isFunction } from './helpers'
 import { BEMBlockClass, BEMBlockProps } from './types'
 import resolveBEMNode, { ReactRenderResult } from './resolveBEMNode'
 
+export interface BEMBlockProviderContext {
+	/**
+	 * BEM block name
+	 */
+	block: string
+}
+
 /**
  * Wraps a class with BEM block functionality, providing the BEM block name
  * via context and converting block and modifiers attributes into className
@@ -25,7 +32,7 @@ export default function createBEMBlock(
 			block: PT.string.isRequired,
 		}
 
-		getChildContext() {
+		getChildContext(): BEMBlockProviderContext {
 			return {
 				...(isFunction(super.getChildContext) && (
 					super.getChildContext.call(this))

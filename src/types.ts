@@ -15,6 +15,7 @@ export abstract class AbstractBEMElement<P = {}, S = {}>
 extends React.Component<P, S> {
 	static contextTypes?: {}
 	static displayName?: string
+	static propTypes?: {}
 }
 
 export type BEMBlockClass = typeof AbstractBEMBlock
