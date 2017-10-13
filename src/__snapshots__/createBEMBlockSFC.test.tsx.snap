@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createBEMBlockSFC merges modifiers prop with root node's modifiers 1`] = `
+<div
+  class="foo foo--mod1 foo--mod2"
+/>
+`;
+
+exports[`createBEMBlockSFC provides BEM block name via context 1`] = `
+Object {
+  "block": "context-block",
+}
+`;

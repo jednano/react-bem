@@ -3,7 +3,7 @@ import * as React from 'react'
 
 import { getDisplayName, isFunction } from './helpers'
 import { BEMBlockClass, BEMBlockProps } from './types'
-import resolveBEMNode, { ReactRenderResult } from './resolveBEMNode'
+import resolveRenderedBlock from './resolveRenderedBlock'
 
 export interface BEMBlockProviderContext {
 	/**
@@ -18,12 +18,15 @@ export interface BEMBlockProviderContext {
  * attributes.
  * @param ComponentClass The class to wrap with BEM block functionality.
  */
-export default function createBEMBlock(
-	ComponentClass: BEMBlockClass | React.ComponentClass,
+export default function createBEMBlock<P ={}>(
+	ComponentClass: (
+		BEMBlockClass |
+		React.ComponentClass<P>
+	),
 ) {
 
-	return class Wrapped<P = {}, S = {}>
-	extends (ComponentClass as BEMBlockClass)<P & BEMBlockProps, S> {
+	return class Wrapped<P2 = {}, S = {}>
+	extends (ComponentClass as BEMBlockClass)<P & P2 & BEMBlockProps, S> {
 
 		static displayName = `BEMBlock(${getDisplayName(ComponentClass)})`
 
@@ -42,15 +45,10 @@ export default function createBEMBlock(
 		}
 
 		render() {
-			const {
-				block,
-				modifiers,
-			} = this.props
-			const rendered = super.render.call(this)
-			return rendered && resolveBEMNode(rendered, {
-				block: block as string,
-				modifiers: [rendered.props.modifiers].concat([modifiers]),
-			}) as ReactRenderResult
+			return resolveRenderedBlock(
+				super.render.call(this),
+				this.props,
+			)
 		}
 	}
 }

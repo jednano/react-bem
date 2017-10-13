@@ -15,7 +15,7 @@ import { BEMElementProps } from './types'
 export default function createBEMElementSFC<P = {}>(
 	SFC: React.SFC<P>,
 ) {
-	const WrappedSFC: React.SFC = function (
+	const WrappedSFC: React.SFC = function(
 		props: P,
 		context: BEMBlockProviderContext,
 	) {
@@ -26,7 +26,7 @@ export default function createBEMElementSFC<P = {}>(
 		) as JSX.Element | null
 	}
 
-	WrappedSFC.displayName = `BEMElement(${getDisplayName(SFC as any)})`
+	WrappedSFC.displayName = `BEMElementSFC(${getDisplayName(SFC as any)})`
 
 	WrappedSFC.contextTypes = {
 		...(SFC.contextTypes || {}),
