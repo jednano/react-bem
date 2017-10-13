@@ -1,5 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`createBEMBlock Renders README example with correct className as shown 1`] = `
+<div
+  class="foo foo--mod1 foo--mod2"
+>
+  <div
+    class="foo__bar"
+  >
+    <div
+      class="foo__corge save-me"
+    >
+      garpley
+    </div>
+  </div>
+  <div
+    class="foo__baz foo__baz--mod3 foo__baz--mod4"
+  >
+    qux
+  </div>
+</div>
+`;
+
 exports[`createBEMBlock extends getChildContext() with the block value from props 1`] = `
 Object {
   "bar": "baz",

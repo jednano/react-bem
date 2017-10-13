@@ -16,9 +16,10 @@ This library allows you to write BEM block and element components in such a way 
 ```tsx
 // Foo.tsx
 import { createBEMBlock } from '@jedmao/react-bem'
+import React from 'react'
 import Bar from './Bar'
 
-class Foo {
+class Foo extends React.Component {
   static defaultProps = {
     block: 'foo'
   }
@@ -42,8 +43,9 @@ The `Bar` component here is an BEM element component and looks like this:
 ```tsx
 // Bar.tsx
 import { createBEMElement } from '@jedmao/react-bem'
+import React from './React'
 
-class Bar {
+class Bar extends React.Component {
   static defaultProps = {
     element: 'bar'
   }
