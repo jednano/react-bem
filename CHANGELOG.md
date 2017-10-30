@@ -1,3 +1,6 @@
+## 0.4.0
+- **Breaking:** Change BEM props from `block`, `element`, `modifiers` to `bemBlock`, `bemElement` and `bemModifiers` to prevent interface collisions. Fixes [#26](https://github.com/jedmao/react-bem/issues/26).
+
 ## 0.3.0
 - Support SFCs via `createBEMBlockSFC` and `createBEMElementSFC` (fixes [`#4`](https://github.com/jedmao/react-bem/issues/21)).
 

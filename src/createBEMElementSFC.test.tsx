@@ -20,7 +20,7 @@ describe('createBEMElementSFC', () => {
 		const BarElement = createBEMElementSFC(Bar)
 		expect(BarElement.contextTypes).toEqual({
 			bar: PT.string,
-			block: PT.string.isRequired,
+			bemBlock: PT.string.isRequired,
 		})
 	})
 
@@ -32,8 +32,8 @@ describe('createBEMElementSFC', () => {
 		const BarElement = createBEMElementSFC(Bar)
 		expect(BarElement.propTypes).toEqual({
 			baz: PT.string,
-			element: PT.string,
-			modifiers: PT.any,
+			bemElement: PT.string,
+			bemModifiers: PT.any,
 		})
 	})
 
@@ -44,10 +44,10 @@ describe('createBEMElementSFC', () => {
 		}
 		const BarElement = createBEMElementSFC(Bar)
 		shallow(
-			<BarElement element="bar" />,
+			<BarElement bemElement="bar" />,
 			{
 				context: {
-					block: 'context-block',
+					bemBlock: 'context-block',
 				},
 			},
 		)
@@ -55,14 +55,14 @@ describe('createBEMElementSFC', () => {
 
 	it('merges modifiers prop with root node\'s modifiers', () => {
 		const Bar: React.SFC = () => (
-			<div modifiers="mod1" />
+			<div bemModifiers="mod1" />
 		)
 		const BarElement = createBEMElementSFC(Bar)
 		expect(shallow(
-			<BarElement element="bar" modifiers="mod2" />,
+			<BarElement bemElement="bar" bemModifiers="mod2" />,
 			{
 				context: {
-					block: 'foo',
+					bemBlock: 'foo',
 				},
 			},
 		)).toMatchSnapshot()

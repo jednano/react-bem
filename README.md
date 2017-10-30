@@ -21,13 +21,13 @@ import Bar from './Bar'
 
 class Foo extends React.Component {
   static defaultProps = {
-    block: 'foo'
+    bemBlock: 'foo'
   }
   render() {
     return (
-      <div modifiers="mod1 mod2">
+      <div bemModifiers="mod1 mod2">
         <Bar />
-        <div element="baz" modifiers={['mod3', { mod4: true }]}>
+        <div bemElement="baz" bemModifiers={['mod3', { mod4: true }]}>
           qux
         </div>
       </div>
@@ -47,12 +47,12 @@ import React from './React'
 
 class Bar extends React.Component {
   static defaultProps = {
-    element: 'bar'
+    bemElement: 'bar'
   }
   render() {
     return (
       <div>
-        <div element="corge" className="save-me">
+        <div bemElement="corge" className="save-me">
           garpley
         </div>
       </div>

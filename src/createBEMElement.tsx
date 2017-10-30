@@ -23,15 +23,15 @@ export default function createBEMElement(
 
 		static contextTypes: BEMBlockProviderContext = {
 			...(ComponentClass.contextTypes || {}),
-			block: PT.string.isRequired,
+			bemBlock: PT.string.isRequired,
 		}
 
 		context: BEMBlockProviderContext
 
 		static propTypes = {
 			...(ComponentClass.propTypes as any || {}),
-			element: PT.string,
-			modifiers: PT.any,
+			bemElement: PT.string,
+			bemModifiers: PT.any,
 		}
 
 		render() {

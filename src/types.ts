@@ -27,11 +27,11 @@ export interface BEMBlockProps {
 	/**
 	 * BEM block name
 	 */
-	block?: string
+	bemBlock?: string
 	/**
 	 * BEM block modifiers
 	 */
-	modifiers?: BEMModifiers
+	bemModifiers?: BEMModifiers
 }
 
 export type BEMElementClass = typeof AbstractBEMElement
@@ -43,11 +43,11 @@ export interface BEMElementProps {
 	/**
 	 * BEM element name
 	 */
-	element?: string
+	bemElement?: string
 	/**
 	 * BEM element modifiers
 	 */
-	modifiers?: BEMModifiers
+	bemModifiers?: BEMModifiers
 }
 
 export interface ReactBEMElementProps<P = {}>

@@ -9,7 +9,7 @@ export interface BEMBlockProviderContext {
 	/**
 	 * BEM block name
 	 */
-	block: string
+	bemBlock: string
 }
 
 /**
@@ -32,7 +32,7 @@ export default function createBEMBlock<P ={}>(
 
 		static childContextTypes = {
 			...ComponentClass.childContextTypes,
-			block: PT.string.isRequired,
+			bemBlock: PT.string.isRequired,
 		}
 
 		getChildContext(): BEMBlockProviderContext {
@@ -40,7 +40,7 @@ export default function createBEMBlock<P ={}>(
 				...(isFunction(super.getChildContext) && (
 					super.getChildContext.call(this))
 				),
-				block: this.props.block,
+				bemBlock: this.props.bemBlock,
 			}
 		}
 

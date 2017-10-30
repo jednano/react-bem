@@ -24,7 +24,7 @@ exports[`createBEMBlock Renders README example with correct className as shown 1
 exports[`createBEMBlock extends getChildContext() with the block value from props 1`] = `
 Object {
   "bar": "baz",
-  "block": "context-block",
+  "bemBlock": "context-block",
 }
 `;
 
@@ -36,6 +36,6 @@ exports[`createBEMBlock merges modifiers prop with root node's modifiers 1`] = `
 
 exports[`createBEMBlock provides BEM block name via context 1`] = `
 Object {
-  "block": "context-block",
+  "bemBlock": "context-block",
 }
 `;

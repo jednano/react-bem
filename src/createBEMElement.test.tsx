@@ -28,7 +28,7 @@ describe('createBEMElement', () => {
 		const BarElement = createBEMElement(Bar)
 		expect(BarElement.contextTypes).toEqual({
 			bar: PT.string,
-			block: PT.string.isRequired,
+			bemBlock: PT.string.isRequired,
 		})
 	})
 
@@ -44,8 +44,8 @@ describe('createBEMElement', () => {
 		const BarElement = createBEMElement(Bar)
 		expect(BarElement.propTypes).toEqual({
 			baz: PT.string,
-			element: PT.string,
-			modifiers: PT.any,
+			bemElement: PT.string,
+			bemModifiers: PT.any,
 		})
 	})
 
@@ -58,10 +58,10 @@ describe('createBEMElement', () => {
 		}
 		const BarElement = createBEMElement(Bar)
 		shallow(
-			<BarElement element="bar" />,
+			<BarElement bemElement="bar" />,
 			{
 				context: {
-					block: 'context-block',
+					bemBlock: 'context-block',
 				},
 			},
 		)
@@ -71,16 +71,16 @@ describe('createBEMElement', () => {
 		class Bar extends React.Component {
 			render() {
 				return (
-					<div modifiers="mod1" />
+					<div bemModifiers="mod1" />
 				)
 			}
 		}
 		const BarElement = createBEMElement(Bar)
 		expect(shallow(
-			<BarElement element="bar" modifiers="mod2" />,
+			<BarElement bemElement="bar" bemModifiers="mod2" />,
 			{
 				context: {
-					block: 'foo',
+					bemBlock: 'foo',
 				},
 			},
 		)).toMatchSnapshot()

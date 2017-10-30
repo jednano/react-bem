@@ -8,6 +8,6 @@ exports[`createBEMBlockSFC merges modifiers prop with root node's modifiers 1`] 
 
 exports[`createBEMBlockSFC provides BEM block name via context 1`] = `
 Object {
-  "block": "context-block",
+  "bemBlock": "context-block",
 }
 `;

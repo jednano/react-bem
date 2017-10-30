@@ -29,7 +29,7 @@ describe('createBEMBlock', () => {
 		const FooBlock = createBEMBlock(Foo)
 		expect(FooBlock.childContextTypes).toEqual({
 			bar: PT.string,
-			block: PT.string.isRequired,
+			bemBlock: PT.string.isRequired,
 		})
 	})
 
@@ -45,7 +45,7 @@ describe('createBEMBlock', () => {
 		}
 		class FooItem extends React.Component {
 			static contextTypes = {
-				block: PT.string.isRequired,
+				bemBlock: PT.string.isRequired,
 			}
 			render() {
 				expect(this.context).toMatchSnapshot()
@@ -54,7 +54,7 @@ describe('createBEMBlock', () => {
 		}
 		const FooBlock = createBEMBlock(Foo)
 		render(
-			<FooBlock block="context-block">
+			<FooBlock bemBlock="context-block">
 				<FooItem />
 			</FooBlock>,
 		)
@@ -81,7 +81,7 @@ describe('createBEMBlock', () => {
 		class FooItem extends React.Component {
 			static contextTypes = {
 				bar: PT.string.isRequired,
-				block: PT.string.isRequired,
+				bemBlock: PT.string.isRequired,
 			}
 			render() {
 				expect(this.context).toMatchSnapshot()
@@ -90,7 +90,7 @@ describe('createBEMBlock', () => {
 		}
 		const FooBlock = createBEMBlock(Foo)
 		render(
-			<FooBlock block="context-block">
+			<FooBlock bemBlock="context-block">
 				<FooItem />
 			</FooBlock>,
 		)
@@ -100,25 +100,25 @@ describe('createBEMBlock', () => {
 		class Foo extends React.Component {
 			render() {
 				return (
-					<div modifiers="mod1" />
+					<div bemModifiers="mod1" />
 				)
 			}
 		}
 		const FooBlock = createBEMBlock(Foo)
 		expect(render(
-			<FooBlock block="foo" modifiers="mod2" />,
+			<FooBlock bemBlock="foo" bemModifiers="mod2" />,
 		)).toMatchSnapshot()
 	})
 
 	it('Renders README example with correct className as shown', () => {
 		class Bar extends React.Component {
 			static defaultProps = {
-				element: 'bar'
+				bemElement: 'bar'
 			}
 			render() {
 				return (
 					<div>
-						<div element="corge" className="save-me">
+						<div bemElement="corge" className="save-me">
 							garpley
 						</div>
 					</div>
@@ -130,13 +130,13 @@ describe('createBEMBlock', () => {
 
 		class Foo extends React.Component {
 			static defaultProps = {
-				block: 'foo'
+				bemBlock: 'foo'
 			}
 			render() {
 				return (
-					<div modifiers="mod1 mod2">
+					<div bemModifiers="mod1 mod2">
 						<BarElement />
-						<div element="baz" modifiers={['mod3', { mod4: true }]}>
+						<div bemElement="baz" bemModifiers={['mod3', { mod4: true }]}>
 							qux
 						</div>
 					</div>
