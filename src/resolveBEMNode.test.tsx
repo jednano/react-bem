@@ -104,7 +104,7 @@ describe('resolveBEMNode', () => {
 
 	it('preserves existing className', () => {
 		expect(shallow(resolveBEMNode(
-			<div element="remove-me" className="keep-me" />,
+			<div bemElement="remove-me" className="keep-me" />,
 			{
 				block: 'block',
 				element: 'element',
@@ -114,7 +114,7 @@ describe('resolveBEMNode', () => {
 
 	it('removes element and modifiers props from root node', () => {
 		expect(shallow(resolveBEMNode(
-			<div element="remove-me" modifiers="and-me" />,
+			<div bemElement="remove-me" bemModifiers="and-me" />,
 			{
 				block: 'block',
 				element: 'element',
@@ -125,7 +125,7 @@ describe('resolveBEMNode', () => {
 	it('resolves a nested element', () => {
 		expect(shallow(resolveBEMNode(
 			<div>
-				<div element="nested" />
+				<div bemElement="nested" />
 			</div>,
 			{
 				block: 'block',
@@ -138,7 +138,7 @@ describe('resolveBEMNode', () => {
 		expect(shallow(resolveBEMNode(
 			<div>
 				<div>
-					<div element="deeply-nested" />
+					<div bemElement="deeply-nested" />
 				</div>
 			</div>,
 			{
@@ -151,8 +151,8 @@ describe('resolveBEMNode', () => {
 	it('removes an empty element value', () => {
 		expect(shallow(resolveBEMNode(
 			<div>
-				<div element="" modifiers="mod1 mod2">
-					<div element="deeply-nested" />
+				<div bemElement="" bemModifiers="mod1 mod2">
+					<div bemElement="deeply-nested" />
 				</div>
 			</div>,
 			{
@@ -166,7 +166,7 @@ describe('resolveBEMNode', () => {
 		expect(shallow(resolveBEMNode(
 			<div>
 				<div>
-					<div element="deeply-nested" modifiers="mod1 mod2" />
+					<div bemElement="deeply-nested" bemModifiers="mod1 mod2" />
 				</div>
 			</div>,
 			{

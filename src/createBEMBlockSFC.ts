@@ -9,7 +9,7 @@ export interface BEMBlockProviderContext {
 	/**
 	 * BEM block name
 	 */
-	block: string
+	bemBlock: string
 }
 
 /**
@@ -28,12 +28,12 @@ export default function createBEMBlockSFC<P ={}>(
 		static displayName = `BEMBlock(${getDisplayName(SFC as any)})`
 
 		static childContextTypes = {
-			block: PT.string.isRequired,
+			bemBlock: PT.string.isRequired,
 		}
 
 		getChildContext(): BEMBlockProviderContext {
 			return {
-				block: this.props.block as string,
+				bemBlock: this.props.bemBlock as string,
 			}
 		}
 

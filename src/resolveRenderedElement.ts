@@ -8,12 +8,12 @@ export default function resolveRenderedElement<P>(
 	context: BEMBlockProviderContext,
 ) {
 	const {
-		element,
-		modifiers,
+		bemElement: element,
+		bemModifiers: modifiers,
 	} = props
 	return rendered && resolveBEMNode(rendered, {
-		block: context.block,
+		block: context.bemBlock,
 		element: element as string,
-		modifiers: [rendered.props.modifiers].concat([modifiers]),
+		modifiers: [rendered.props.bemModifiers].concat([modifiers]),
 	}) as ReactRenderResult
 }

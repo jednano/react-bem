@@ -95,7 +95,10 @@ export default function resolveBEMNode(
 			const props = (
 				(child || {}) as ReactBEMElement
 			).props || {} as ReactBEMElementProps
-			const { element, modifiers } = props
+			const {
+				bemElement: element,
+				bemModifiers: modifiers,
+			} = props
 			return (!element && !isOnlyChild) ? child : resolveBEMNode(
 				child,
 				{ block, element, modifiers },

@@ -30,19 +30,19 @@ export default function createBEMElementSFC<P = {}>(
 
 	WrappedSFC.contextTypes = {
 		...(SFC.contextTypes || {}),
-		block: PT.string.isRequired,
+		bemBlock: PT.string.isRequired,
 	}
 
 	WrappedSFC.propTypes = {
 		...(SFC.propTypes as any || {}),
-		element: PT.string,
-		modifiers: PT.any,
+		bemElement: PT.string,
+		bemModifiers: PT.any,
 	}
 
 	return WrappedSFC as React.SFC<P & BEMElementProps> & {
 		displayName: string
 		contextTypes: typeof SFC.contextTypes & {
-			block: PT.Validator<string>
+			bemBlock: PT.Validator<string>
 		}
 	}
 }

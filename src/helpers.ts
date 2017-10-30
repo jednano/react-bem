@@ -23,8 +23,8 @@ export function getDisplayName(ComponentClass: typeof Component) {
 		|| 'Component'
 }
 
-const bemProps: ['block', 'element', 'modifiers'] =
-	['block', 'element', 'modifiers']
+const bemProps: ['bemBlock', 'bemElement', 'bemModifiers'] =
+	            ['bemBlock', 'bemElement', 'bemModifiers']
 export function omitBEMProps<T>(
 	props: T & BEMBlockProps & BEMElementProps,
 ): ReactElementProps {

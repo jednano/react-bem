@@ -28,10 +28,10 @@ describe('react-bem HOCs', () => {
 
 	it('renders an element within a block within a block', () => {
 		expect(render(
-			<FooBlock block="b1">
-				<ItemElement element="e1" />
-				<FooBlock block="b2">
-					<ItemElement element="e2" />
+			<FooBlock bemBlock="b1">
+				<ItemElement bemElement="e1" />
+				<FooBlock bemBlock="b2">
+					<ItemElement bemElement="e2" />
 				</FooBlock>
 			</FooBlock>
 		)).toMatchSnapshot()

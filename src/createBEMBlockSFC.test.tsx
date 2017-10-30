@@ -24,10 +24,10 @@ describe('createBEMBlockSFC', () => {
 			return null
 		}
 		FooItem.contextTypes = {
-			block: PT.string.isRequired,
+			bemBlock: PT.string.isRequired,
 		}
 		render(
-			<FooBlock block="context-block">
+			<FooBlock bemBlock="context-block">
 				<FooItem />
 			</FooBlock>,
 		)
@@ -35,11 +35,11 @@ describe('createBEMBlockSFC', () => {
 
 	it('merges modifiers prop with root node\'s modifiers', () => {
 		const Foo: React.SFC = () => (
-			<div modifiers="mod1" />
+			<div bemModifiers="mod1" />
 		)
 		const FooBlock = createBEMBlockSFC(Foo)
 		expect(render(
-			<FooBlock block="foo" modifiers="mod2" />,
+			<FooBlock bemBlock="foo" bemModifiers="mod2" />,
 		)).toMatchSnapshot()
 	})
 })
