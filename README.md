@@ -9,6 +9,8 @@
 
 [BEM](https://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) helper functions and [HOCs](https://reactjs.org/docs/higher-order-components.html) for React.
 
+test
+
 ## Introduction
 
 This library allows you to write BEM block and element components in such a way that the block saves its name in context, later to be accessed by any number of BEM element components. A block component might look something like this:
