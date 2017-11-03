@@ -1,6 +1,6 @@
 {
   "name": "@jedmao/react-bem",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "BEM helper functions and HOCs for React.",
   "keywords": [
     "react",

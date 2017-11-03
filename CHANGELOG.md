@@ -1,3 +1,6 @@
+## 0.4.1
+- Disable SourceMaps for distribution.
+
 ## 0.4.0
 - **Breaking:** Change BEM props from `block`, `element`, `modifiers` to `bemBlock`, `bemElement` and `bemModifiers` to prevent interface collisions. Fixes [#26](https://github.com/jedmao/react-bem/issues/26).
 
