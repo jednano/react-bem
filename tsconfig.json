@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
-		"outDir": "dist",
-		"declaration": true,
+    "outDir": "dist",
+    "declaration": true,
     "module": "commonjs",
     "target": "es5",
     "lib": ["es6", "dom"],
-		"sourceMap": true,
-		"jsx": "react",
+    "sourceMap": false,
+    "jsx": "react",
     "moduleResolution": "node",
     "rootDir": "src",
     "forceConsistentCasingInFileNames": true,
