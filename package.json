@@ -46,7 +46,7 @@
     "pretest": "npm run build",
     "test": "jest --env=jsdom",
     "watch": "npm run test -- --watch",
-    "prepublish": "npm run build"
+    "prepack": "npm run build"
   },
   "dependencies": {
     "@types/enzyme": "^2.8.11",
