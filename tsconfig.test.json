@@ -1,7 +1,7 @@
 {
   "extends": "./tsconfig.json",
-  "sourceMap": true,
   "compilerOptions": {
-		"module": "commonjs"
+		"module": "commonjs",
+		"sourceMap": true
 	}
 }

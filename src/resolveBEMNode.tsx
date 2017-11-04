@@ -92,16 +92,20 @@ export default function resolveBEMNode(
 			index: number,
 			isOnlyChild: Boolean = false,
 		): React.ReactChild {
-			const props = (
+			const props2 = (
 				(child || {}) as ReactBEMElement
 			).props || {} as ReactBEMElementProps
 			const {
-				bemElement: element,
-				bemModifiers: modifiers,
-			} = props
-			return (!element && !isOnlyChild) ? child : resolveBEMNode(
+				bemElement,
+				bemModifiers,
+			} = props2
+			return (!bemElement && !isOnlyChild) ? child : resolveBEMNode(
 				child,
-				{ block, element, modifiers },
+				{
+					block,
+					element: bemElement,
+					modifiers: bemModifiers,
+				},
 				depth + 1,
 			) as React.ReactChild
 		}

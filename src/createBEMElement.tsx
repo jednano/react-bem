@@ -14,11 +14,12 @@ import { BEMElementProps } from './types'
  * @param ComponentClass The class to wrap with BEM element functionality.
  */
 export default function createBEMElement(
-	ComponentClass: React.ComponentClass<any & BEMElementProps>,
+	ComponentClass: React.ComponentClass<{} & BEMElementProps>,
 ) {
 	return class Wrapped extends ComponentClass {
 
 		static displayName =
+			// tslint:disable-next-line:no-any
 			`BEMElement(${getDisplayName(ComponentClass as any)})`
 
 		static contextTypes: BEMBlockProviderContext = {
@@ -26,13 +27,14 @@ export default function createBEMElement(
 			bemBlock: PT.string.isRequired,
 		}
 
-		context: BEMBlockProviderContext
-
 		static propTypes = {
+			// tslint:disable-next-line:no-any
 			...(ComponentClass.propTypes as any || {}),
 			bemElement: PT.string,
 			bemModifiers: PT.any,
 		}
+
+		context: BEMBlockProviderContext
 
 		render() {
 			return resolveRenderedElement(

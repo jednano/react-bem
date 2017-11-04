@@ -24,10 +24,11 @@ export function getDisplayName(ComponentClass: typeof Component) {
 }
 
 const bemProps: ['bemBlock', 'bemElement', 'bemModifiers'] =
-	            ['bemBlock', 'bemElement', 'bemModifiers']
+	['bemBlock', 'bemElement', 'bemModifiers']
 export function omitBEMProps<T>(
 	props: T & BEMBlockProps & BEMElementProps,
 ): ReactElementProps {
+	// tslint:disable-next-line:no-any
 	return omit(props, bemProps) as any
 }
 
@@ -58,6 +59,8 @@ export function omit<T, K extends keyof T>(obj: T, paths: K[]) {
 		)
 }
 
+export interface BEMClassNamesOptions extends BEMJoinOptions {}
+
 export interface BEMClassNamePropOptions extends BEMClassNamesOptions {}
 
 export function bemClassNameProp(
@@ -74,8 +77,6 @@ export function bemClassNameProp(
 	)
 	return className ? { className } : {}
 }
-
-export interface BEMClassNamesOptions extends BEMJoinOptions {}
 
 /**
  * Joins a BEM block or element with any number of potentionally deeply

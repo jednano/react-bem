@@ -18,13 +18,14 @@ export interface BEMBlockProviderContext {
  * attributes.
  * @param SFC The SFC to wrap with BEM block functionality.
  */
-export default function createBEMBlockSFC<P ={}>(
+export default function createBEMBlockSFC<P = {}>(
 	SFC: React.SFC<P>,
 ) {
 
 	return class Wrapped<P2 = {}, S = {}>
-	extends React.Component<any & P & P2 & BEMBlockProps, S> {
+	extends React.Component<{} & P & P2 & BEMBlockProps, S> {
 
+		// tslint:disable-next-line:no-any
 		static displayName = `BEMBlock(${getDisplayName(SFC as any)})`
 
 		static childContextTypes = {
@@ -39,7 +40,8 @@ export default function createBEMBlockSFC<P ={}>(
 
 		render() {
 			return resolveRenderedBlock(
-				SFC(this.props, this.context),
+				// tslint:disable-next-line:no-any
+				SFC(this.props as any, this.context),
 				this.props,
 			)
 		}

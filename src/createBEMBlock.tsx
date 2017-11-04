@@ -18,7 +18,7 @@ export interface BEMBlockProviderContext {
  * attributes.
  * @param ComponentClass The class to wrap with BEM block functionality.
  */
-export default function createBEMBlock<P ={}>(
+export default function createBEMBlock<P = {}>(
 	ComponentClass: (
 		BEMBlockClass |
 		React.ComponentClass<P>

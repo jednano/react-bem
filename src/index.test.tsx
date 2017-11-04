@@ -33,7 +33,7 @@ describe('react-bem HOCs', () => {
 				<FooBlock bemBlock="b2">
 					<ItemElement bemElement="e2" />
 				</FooBlock>
-			</FooBlock>
+			</FooBlock>,
 		)).toMatchSnapshot()
 	})
 })

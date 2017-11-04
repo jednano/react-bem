@@ -26,6 +26,7 @@ export default function createBEMElementSFC<P = {}>(
 		) as JSX.Element | null
 	}
 
+	// tslint:disable-next-line:no-any
 	WrappedSFC.displayName = `BEMElementSFC(${getDisplayName(SFC as any)})`
 
 	WrappedSFC.contextTypes = {
@@ -34,6 +35,7 @@ export default function createBEMElementSFC<P = {}>(
 	}
 
 	WrappedSFC.propTypes = {
+		// tslint:disable-next-line:no-any
 		...(SFC.propTypes as any || {}),
 		bemElement: PT.string,
 		bemModifiers: PT.any,

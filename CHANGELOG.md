@@ -1,3 +1,8 @@
+## 0.4.2
+- Actually disable sourcemaps for distribution.
+- Actually introduce tslint.
+- Fix lint issues.
+
 ## 0.4.1
 - Disable SourceMaps for distribution.
 
