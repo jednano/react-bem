@@ -1,3 +1,4 @@
+// tslint:disable:no-any
 import { shallow } from 'enzyme'
 import * as React from 'react'
 
@@ -13,7 +14,6 @@ describe('resolveBEMNode', () => {
 			0,
 			'',
 		].forEach(value => {
-			// tslint:disable-next-line:no-any
 			expect(resolveBEMNode(value, {} as any)).toBe(value)
 		})
 	})
@@ -78,7 +78,7 @@ describe('resolveBEMNode', () => {
 			<div key={key} />,
 			{
 				block: 'block',
-			}
+			},
 		) as any).key).toBe(key)
 	})
 
@@ -88,7 +88,7 @@ describe('resolveBEMNode', () => {
 			<div ref={fn} />,
 			{
 				block: 'block',
-			}
+			},
 		) as any).ref).toBe(fn)
 	})
 
@@ -188,5 +188,5 @@ describe('resolveBEMNode', () => {
 				{ block: 'block' },
 			) as JSX.Element)).toMatchSnapshot()
 		})
-    })
+	})
 })

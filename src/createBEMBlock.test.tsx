@@ -3,7 +3,7 @@ import * as PT from 'prop-types'
 import * as React from 'react'
 
 import createBEMBlock from './createBEMBlock'
-import createBEMElement from "./createBEMElement";
+import createBEMElement from './createBEMElement'
 
 describe('createBEMBlock', () => {
 
@@ -113,7 +113,7 @@ describe('createBEMBlock', () => {
 	it('Renders README example with correct className as shown', () => {
 		class Bar extends React.Component {
 			static defaultProps = {
-				bemElement: 'bar'
+				bemElement: 'bar',
 			}
 			render() {
 				return (
@@ -126,11 +126,11 @@ describe('createBEMBlock', () => {
 			}
 		}
 
-		const BarElement = createBEMElement(Bar);
+		const BarElement = createBEMElement(Bar)
 
 		class Foo extends React.Component {
 			static defaultProps = {
-				bemBlock: 'foo'
+				bemBlock: 'foo',
 			}
 			render() {
 				return (
@@ -143,7 +143,7 @@ describe('createBEMBlock', () => {
 				)
 			}
 		}
-		const FooBlock = createBEMBlock(Foo);
+		const FooBlock = createBEMBlock(Foo)
 		expect(render(<FooBlock/>)).toMatchSnapshot()
 	})
 })

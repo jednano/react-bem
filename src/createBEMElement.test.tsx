@@ -41,7 +41,8 @@ describe('createBEMElement', () => {
 				return null
 			}
 		}
-		const BarElement = createBEMElement(Bar)
+		// tslint:disable-next-line:no-any
+		const BarElement = createBEMElement(Bar as any)
 		expect(BarElement.propTypes).toEqual({
 			baz: PT.string,
 			bemElement: PT.string,

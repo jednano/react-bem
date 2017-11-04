@@ -1,6 +1,6 @@
 {
   "name": "@jedmao/react-bem",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "BEM helper functions and HOCs for React.",
   "keywords": [
     "react",
@@ -37,11 +37,16 @@
     ]
   },
   "scripts": {
+    "clean": "rimraf dist",
+    "lint": "tslint --project tsconfig.json",
+    "prebuild": "npm run clean && npm run lint",
     "build": "tsc",
-    "build:watch": "tsc --watch",
+    "prebuild:watch": "npm run clean && npm run lint",
+    "build:watch": "tsc -p tsconfig.test.json --watch",
     "pretest": "npm run build",
     "test": "jest --env=jsdom",
-    "watch": "npm run test -- --watch"
+    "watch": "npm run test -- --watch",
+    "prepublish": "npm run build"
   },
   "dependencies": {
     "@types/enzyme": "^2.8.11",
@@ -69,7 +74,10 @@
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-test-renderer": "^16.0.0",
+    "rimraf": "^2.6.2",
     "ts-jest": "21.0.1",
+    "tslint": "^5.8.0",
+    "tslint-react": "^3.2.0",
     "typescript": "2.5.3"
   }
 }
