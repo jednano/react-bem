@@ -1,6 +1,6 @@
 {
   "name": "@jedmao/react-bem",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "BEM helper functions and HOCs for React.",
   "keywords": [
     "react",
@@ -49,35 +49,35 @@
     "prepack": "npm run build"
   },
   "dependencies": {
-    "@types/enzyme": "^2.8.11",
+    "@types/enzyme": "^3.1.7",
     "@types/enzyme-to-json": "^1.5.0",
-    "@types/jest": "^21.1.2",
+    "@types/jest": "^22.0.1",
     "@types/prop-types": "^15.5.2",
-    "@types/react": "^16.0.9",
-    "@types/react-dom": "^16.0.0",
+    "@types/react": "^16.0.34",
+    "@types/react-dom": "^16.0.3",
     "@types/react-test-renderer": "^16.0.0",
-    "bem-helpers": "^0.9.0",
-    "bem-join": "^0.2.0"
+    "bem-helpers": "^0.9.1",
+    "bem-join": "^0.2.1"
   },
   "peerDependencies": {
     "prop-types": "^15.6.0",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
   },
   "devDependencies": {
-    "enzyme": "^3.1.0",
-    "enzyme-adapter-react-16": "^1.0.1",
-    "enzyme-to-json": "^3.1.1",
-    "jest": "^21.2.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.0",
+    "jest": "^22.1.4",
     "prop-types": "^15.6.0",
     "raf": "^3.4.0",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-test-renderer": "^16.0.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-test-renderer": "^16.2.0",
     "rimraf": "^2.6.2",
-    "ts-jest": "21.0.1",
-    "tslint": "^5.8.0",
-    "tslint-react": "^3.2.0",
-    "typescript": "2.5.3"
+    "ts-jest": "22.0.1",
+    "tslint": "^5.9.1",
+    "tslint-react": "^3.4.0",
+    "typescript": "2.6.2"
   }
 }

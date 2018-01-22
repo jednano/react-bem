@@ -22,7 +22,7 @@ export default function createBEMElement(
 			// tslint:disable-next-line:no-any
 			`BEMElement(${getDisplayName(ComponentClass as any)})`
 
-		static contextTypes: BEMBlockProviderContext = {
+		static contextTypes = {
 			...(ComponentClass.contextTypes || {}),
 			bemBlock: PT.string.isRequired,
 		}

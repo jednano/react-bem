@@ -28,7 +28,8 @@ export default function createBEMBlock<P = {}>(
 	return class Wrapped<P2 = {}, S = {}>
 	extends (ComponentClass as BEMBlockClass)<P & P2 & BEMBlockProps, S> {
 
-		static displayName = `BEMBlock(${getDisplayName(ComponentClass)})`
+		// tslint:disable-next-line:no-any
+		static displayName = `BEMBlock(${getDisplayName(ComponentClass as any)})`
 
 		static childContextTypes = {
 			...ComponentClass.childContextTypes,

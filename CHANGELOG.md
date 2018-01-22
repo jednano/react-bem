@@ -1,3 +1,7 @@
+## 0.4.3
+- Fix distribution.
+- Update dependencies.
+
 ## 0.4.2
 - Actually disable sourcemaps for distribution.
 - Actually introduce tslint.
