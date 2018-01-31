@@ -1,7 +1,7 @@
 {
   "name": "@jedmao/react-bem",
-  "version": "0.4.3",
-  "description": "BEM helper functions and HOCs for React.",
+  "version": "1.0.0",
+  "description": "BEM helper functions for React.",
   "keywords": [
     "react",
     "bem",
@@ -56,8 +56,7 @@
     "@types/react": "^16.0.34",
     "@types/react-dom": "^16.0.3",
     "@types/react-test-renderer": "^16.0.0",
-    "bem-helpers": "^0.9.1",
-    "bem-join": "^0.2.1"
+    "bem-helpers": "^1.0.0"
   },
   "peerDependencies": {
     "prop-types": "^15.6.0",
